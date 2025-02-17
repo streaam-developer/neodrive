@@ -1,0 +1,33 @@
+Setting Up Script
+ 
+1. Config file
++ Open base/data/setting/config.json
+ 
++ there are 4 main data that must be changed
+  1. site.domain = your domain
+  2. drive.client.id = your api client id
+  3. drive.client.secret = your api secret
+  4. drive.redirect.uris = url redirect.
+ please make sure your slash url is correct (using "\/")
+ 
+2. Admin Access (after setting up API)
+ login to your website.
+ open base/data/user/youremail@gmail.com.json , edit and change "member" to "admin".
+ 
+3. Disable Multi-Resolution Player
+  open play.php
+  change
+  $multi_resolution = "enable";
+  to
+  $multi_resolution = "disable";
+ 
+Major Problem
+1. error when login / profile and picture not appear
+this usually cause by lacking folder in base folder, try to extract script directly to your host / server or complete the
+missing folder.
+ 
+2. Player not working / multi-res not showing.
+ if player not working please try another video, or check if your video is playable on jwplayer. multi-res not show, not every video can be converted, so some video will not have multi-res.
+ 
+3. Subtitle Grabber error
+   activate allow_url_fopen and zip function in your server/host

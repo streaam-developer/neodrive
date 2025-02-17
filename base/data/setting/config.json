@@ -1,0 +1,23 @@
+{
+   "site.domain":"yourdomain.com",
+   "site.title":"NeoDrive",
+   "site.description":"Easy way to share your Drive",
+   "site.tag":"NeoDrive",
+   "site.copyright":"NeoDrive",
+   "site.page":null,
+   "drive.client.id":"976829358586-vtbg2ikk0alisaj770753ijh1utr6n4d.apps.googleusercontent.com",
+   "drive.client.secret":"zhWrFFlLj5TDPbinYpZBDYO-",
+   "drive.client.key":"AIzaSyD3XpYRETUc9pY-XFZgZBfaM167Db7quyE",
+   "drive.redirect.uris":"https:\/\/yourdomain.com\/login.php",
+   "drive.auth.uri":"https:\/\/accounts.google.com\/o\/oauth2\/auth",
+   "drive.token.uri":"https:\/\/accounts.google.com\/o\/oauth2\/token",
+   "drive.cert.url":"https:\/\/www.googleapis.com\/oauth2\/v1\/certs",
+   "banner1":"",
+   "banner2":"",
+   "google.webmaster.id":"",
+   "google.analytics.id":"",
+   "head.tag":"",
+   "player":"enable",
+   "jw":"https:\/\/syndication.exdynsrv.com\/splash.php?idzone=3659501",
+   "site.webset":"public"
+}
