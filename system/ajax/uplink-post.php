@@ -42,7 +42,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
                         "\r"
                     ) , "", $id);
                 }
-                $files = json_decode(load("https://www.googleapis.com/drive/v3/files/$id?fields=fileExtension%2Cmd5Checksum%2CmimeType%2Cname%2Csize%2CthumbnailLink&supportsAllDrives=true&supportsTeamDrives=true&access_token=$token[access_token]") , true);
+                $files = json_decode(load("https://www.googleapis.com/drive/v3/files/$id?supportsAllDrives=true&supportsTeamDrives=true&fields=fileExtension%2Cmd5Checksum%2CmimeType%2Cname%2Csize%2CthumbnailLink&access_token=$token[access_token]") , true);
                 if (isset($_SESSION['email'], $id, $files['name'], $files['fileExtension'], $files['size'], $files['mimeType']))
                 {
                     echo "\t";

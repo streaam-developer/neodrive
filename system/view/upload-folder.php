@@ -79,10 +79,10 @@ $(document).ready(function(){
 
 </script>
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid bg-gradient-dark">
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Upload Folder  <a href="#" data-toggle="tooltip" data-placement="bottom" title="Valid url : &#13;&#10; https://drive.google.com/folderview?id={id}"><i class="fa fa-info-circle fa-sm"></i></a></h1>
+      <h1 class="h5 mb-0 mt-4 text-white"><i class="fas fa-folder-open"></i> Copy Folder <a href="#" data-toggle="tooltip" data-placement="bottom" title="Valid url : &#13;&#10; https://drive.google.com/folderview?id={id}"><i class="fa fa-info-circle fa-sm"></i></a></h1>
    </div>
    <!-- Page Heading -->
    <!-- Content Row -->

@@ -84,10 +84,10 @@
    $list = menu_file($token,$_GET[next],urlencode($_GET[q]));
    ?>
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid bg-gradient-dark">
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Upload File</h1>
+      <h1 class="h5 mb-0 mt-4 text-white"><i class="fas fa-cloud-upload-alt"></i> Upload From Drive</h1>
    </div>
    <!-- Page Heading -->
    <!-- Content Row -->

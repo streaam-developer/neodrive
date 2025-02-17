@@ -1,5 +1,5 @@
 <?php if(config('site.webset') == "private" && $user['role'] == "member"):?>
-<div class="container-fluid">
+<div class="container-fluid bg-gradient-dark">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-9 mb-4">
                 <div class="card shadow mb-4">
@@ -44,15 +44,15 @@
 <?php else:?>
 <!-- Begin Page Content -->
 <script async="async" type="text/javascript" src="/assets/js/get-file2.5.js"></script>
-<div class="container-fluid">
+<div class="container-fluid bg-gradient-dark">
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Shared File</h1>
+      <h1 class="h5 mb-0 text-white"><i class="fas fa-share-alt"></i> Shared File</h1>
    </div>
    <!-- Content Row -->
    <div class="row">
       <div class="col-xl-12 col-md-12 mb-4">
          <div class="card shadow mb-4">
-            <div class="card-body">
+            <div class="card-body bg-gradient-dark">
                <div class="form-group" style="padding:0 0 15px">
                   <div class="input-group">
                      <input class="form-control form-control-sm" type="text" id="gopage" class="form-control form-control-sm" placeholder="jump to page...">

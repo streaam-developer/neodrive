@@ -23,7 +23,7 @@ include "system/view/header.php";
 
  <?php if($users['role'] == "blacklist"):?>
 
-    <div class="container-fluid">
+    <div class="container-fluid bg-gradient-dark">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-9 mb-4">
                 <div class="card shadow mb-4">
@@ -45,14 +45,14 @@ include "system/view/header.php";
 
 <?php elseif($share['file']['status'] == "delete"):?>
 
-    <div class="container-fluid">
+    <div class="container-fluid bg-gradient-dark">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-9 mb-4">
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
+                    <div class="card-header py-3 bg-gradient-dark">
                         <h4 class="m-0 font-weight-bold text-primary" align="center">The file has been deleted !</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-gradient-dark">
                         <div class="text-center">
                             <i class="fa fa-exclamation-triangle fa-xl"></i>
                             <br>
@@ -67,14 +67,14 @@ include "system/view/header.php";
 
 <?php elseif($share['file']['title'] == null):?>
 
-    <div class="container-fluid">
+    <div class="container-fluid bg-gradient-dark">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-9 mb-4">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h4 class="m-0 font-weight-bold text-primary" align="center">File not found !</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-gradient-dark">
                         <div class="text-center">
                             <i class="fa fa-exclamation-triangle fa-xl"></i>
                             <br>
@@ -88,42 +88,42 @@ include "system/view/header.php";
 
 <?php else:?>
        
-      <div class="container-fluid">
+      <div class="container-fluid bg-gradient-dark">
       <div id="down-id" hidden="true"><?php echo $_GET[id]?></div>
           <!-- Content Row -->
             <div class="row justify-content-center">
               <div class="col-lg-9 col-md-9 mb-4">
               <?php echo config('banner1')?>
-              <div class="card shadow mb-4">
-              	<div class="card-header py-3">
+              <div class="card shadow bg-gradient-dark mt-4  mb-4">
+              	<div class="card-header bg-gradient-dark py-3">
                   <h4 class="m-0 font-weight-bold text-primary" align="center"><?php echo $share['file']['title']?></h4>
                 </div>
                 <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-borderless" id="dataTable" width="100%" cellspacing="0">
                           <tbody>
-                              <tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em;">
-                                  <td>File Size</td>
+                              <tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em; font-size:0.8em;">
+                                  <td class="text-white"><i class="fas fa-hdd"></i> File Size</td>
                                   <td align="right"><?php echo formatBytes($share['file']['size'])?></td>
                               </tr>
-                              <tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em;">
-                                  <td>File Type</td>
+                              <tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em; font-size:0.8em;">
+                                  <td class="text-white"><i class="fas fa-file"></i> File Type</td>
                                   <td align="right"><?php echo $share['file']['mime']?></td>
                               </tr>
-<?php if($ses == "admin"):?>
-                              <tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em;">
-<?php else:?>
-                              <tr>
-<?php endif;?>
-                                  <td>File Owner</td>
-                                  <td align="right"><?php echo $users['name']?></td>
+<?php //if($ses == "admin"):?>
+                              <!--<tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em;">-->
+<?php// else:?>
+                              <tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em; font-size:0.8em;">
+<?php //endif;?>
+                                  <td class="text-white"><i class="fas fa-cloud-download-alt"></i> Downloads</td>
+                                  <td align="right"><?php echo $share['file']['down']?></td>
                               </tr>
-<?php if($ses == "admin"):?>
-                              <tr>
-                                  <td>Email</td>
-                                  <td align="right"><?php echo $users['email']?></td>
+<?php //if($ses == "admin"):?>
+                              <tr style="border-bottom: 0.5px solid #ccc; line-height: 1.8em; font-size:0.8em;">
+                                  <td class="text-white"><i class="fas fa-calendar"></i> Date</td>
+                                  <td align="right"><?php echo $share['file']['date']?></td>
                               </tr>
-<?php endif; ?>
+<?php// endif; ?>
                           </tbody>
                     </table>
                     </div>
@@ -134,21 +134,28 @@ include "system/view/header.php";
                     <br>
                     <div class="text" align="center">
                         <?php if(isset($_SESSION['email'])):?>
-                        <button onclick="myDownload()" id="down" type="button" class="btn btn-primary btn-user"><i class="fa fa-download"></i>  Download</button>
-                        <?php if(config("player") == "enable" && $formatv == "video"):?>
-                        <a href="/stream/<?php echo $_GET['id']?>" class="btn btn-primary btn-user"><i class="fa fa-play-circle"></i>  Streaming</a>
-                        <?php else:?>
-                        <a href="" class="btn btn-primary btn-user disabled"><i class="fa fa-play-circle"></i>  Streaming</a>
-                        <?php endif;?>
+                        <button onclick="myDl('https://<?php echo config('site.domain')?>/dld?id=<?php echo $_GET['id']?>&code=200&gd=<?php echo md5(uniqid(rand(), true)) ?>')" id="down" class="btn btn-outline-light btn-user font-weight-bold"><i class="fa fa-cloud-download-alt"></i>  Download & Play Here <?php echo formatBytes($share['file']['size'])?></button>
+<script type="text/javascript">
+function myDl(e) {
+document.getElementById("down").innerHTML = '<i class="fa fa-spinner fa-spin"></i>  Downloading.. Please wait, it may take some time.';
+document.getElementById("down").disabled = !0;
+window.location.href = e;
+}
+</script>
+                        <?php //if(config("player") == "enable" && $formatv == "video"):?>
+                        <!--<a href="/stream/<?php// echo $_GET['id']?>" class="btn btn-primary btn-user"><i class="fa fa-play-circle"></i>  Streaming</a>-->
+                        <?php //else:?>
+                        <!--<a href="" class="btn btn-primary btn-user disabled"><i class="fa fa-play-circle"></i>  Streaming</a>-->
+                        <?php //endif;?>
                         <?php else:?>
                         <form action="/login.php" method="GET">
                             <input name="r" value="https://<?php echo config('site.domain')?>/file/<?php echo $_GET['id']?>" type="hidden">
-                            <button class="btn btn-primary btn-user" type="submit"><i class="fa fa-download"></i>  Download</button>
-                            <?php if(config("player") == "enable" && $formatv == "video"):?>
-                            <a href="/stream/<?php echo $_GET['id']?>" class="btn btn-primary btn-user"><i class="fa fa-play-circle"></i>  Streaming</a>
-                            <?php else:?>
-                            <a href="" class="btn btn-primary btn-user disabled"><i class="fa fa-play-circle"></i>  Streaming</a>
-                            <?php endif;?>
+                            <button class="btn btn-outline-light btn-user font-weight-bold" type="submit"><i class="fa fa-cloud-download-alt"></i>  Download & Play Here </button>
+                            <?php// if(config("player") == "enable" && $formatv == "video"):?>
+                            <!--<a href="/stream/<?php echo $_GET['id']?>" class="btn btn-primary btn-user"><i class="fa fa-play-circle"></i>  Streaming</a>-->
+                            <?php// else:?>
+                            <!--<a href="" class="btn btn-primary btn-user disabled"><i class="fa fa-play-circle"></i>  Streaming</a>-->
+                            <?php// endif;?>
                         </form>
                         <?php endif;?>
                         <br><br>

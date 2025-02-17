@@ -79,10 +79,10 @@ $(document).ready(function(){
    });
 </script>
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid bg-gradient-dark">
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Copy Drive <a href="#" data-toggle="tooltip" data-placement="bottom" title="Valid url : &#13;&#10; https://drive.google.com/file/d/fileid &#13;&#10; https://drive.google.com/open?id=file"><i class="fa fa-info-circle fa-sm"></i></a></h1>
+      <h1 class="h5 mb-0 mt-4 text-white"><i class="fas fa-fw fa-copy"></i> Copy File <a href="#" data-toggle="tooltip" data-placement="bottom" title="Valid url : &#13;&#10; https://drive.google.com/file/d/fileid &#13;&#10; https://drive.google.com/open?id=file"><i class="fa fa-info-circle fa-sm"></i></a></h1>
    </div>
    <!-- Page Heading -->
    <!-- Content Row -->
@@ -94,7 +94,7 @@ $(document).ready(function(){
                <div class="text-center">
                   <form method="post" action="ajax.php?ajax=copy-drive">
                      <div class="form-group">
-                        <textarea class="form-control" rows="10" cols="5" name="url" placeholder="Max 5 URLs"></textarea>
+                        <textarea class="form-control" rows="10" cols="5" name="url" placeholder="https://drive.google.com/open?id=1Io5M4gLiVE50bMcCbxwjLk_FrtshghLG"></textarea>
                      </div>
                      <br>
                      <button class="btn btn-primary" type="submit">Submit</button>

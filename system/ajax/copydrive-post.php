@@ -60,7 +60,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
         }
         else
         {
-            echo "gak onok iki";
+            echo "This is not good";
         }
     }
 

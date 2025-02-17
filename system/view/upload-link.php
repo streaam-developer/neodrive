@@ -18,7 +18,7 @@
         </div>
     </div>
 <?php elseif($user['role'] == "blacklist"):?>
-<div class="container-fluid">
+<div class="container-fluid ">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-9 mb-4">
                 <div class="card shadow mb-4">
@@ -79,10 +79,10 @@
 </script>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid bg-gradient-dark">
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Upload Link <a href="#" data-toggle="tooltip" data-placement="bottom" title="Valid url : &#13;&#10; https://drive.google.com/file/d/fileid &#13;&#10; https://drive.google.com/open?id=file"><i class="fa fa-info-circle fa-sm"></i></a></h1>
+      <h1 class="h5 mb-0 text-white"><i class="fas fa-link"></i> Upload From Link <a href="#" data-toggle="tooltip" data-placement="bottom" title="Valid url : &#13;&#10; https://drive.google.com/file/d/fileid &#13;&#10; https://drive.google.com/open?id=file"><i class="fa fa-info-circle fa-sm"></i></a></h1>
    </div>
    <!-- Page Heading -->
    <!-- Content Row -->
@@ -90,11 +90,11 @@
       <div class="col-xl-12 col-md-12 mb-4">
          <!-- Tankyou For Choosing Us -->
          <div class="card shadow mb-4">
-            <div class="card-body">
+            <div class="card-body bg-gradient-dark">
                <div class="text-center">
                   <form method="post" action="ajax.php?ajax=upload-link">
                      <div class="form-group">
-                        <textarea class="form-control" rows="10" cols="5" name="url" placeholder="Max 5 URLs"></textarea>
+                        <textarea class="form-control" rows="10" cols="5" name="url" placeholder="https://drive.google.com/open?id=1Io5M4gLiVE50bMcCbxwjLk_FrtshghLG"></textarea>
                      </div>
                      <br>
                      <button class="btn btn-primary" type="submit">Submit</button>

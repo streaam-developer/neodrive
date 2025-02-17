@@ -77,7 +77,7 @@ function token($type, $refresh)
 }
 function directdl($id, $token)
 {
-    $files = json_decode(load("https://www.googleapis.com/drive/v3/files/$id?fields=downloadUrl&access_token=$token") , true);
+    $files = json_decode(load("https://www.googleapis.com/drive/v2/files/$id?supportsAllDrives=true&supportsTeamDrives=true&fields=downloadUrl&access_token=$token") , true);
     $downloadUrl = str_replace("&gd=true", "", $files['downloadUrl']);
     return $downloadUrl;
 }
@@ -105,7 +105,6 @@ function directdl2($id)
     $object = json_decode(str_replace(')]}\'', '', $response) , true);
     return $object[downloadUrl];
 }
-
 function delete($id, $token)
 {
     $ch = curl_init();
@@ -188,7 +187,7 @@ function anyone2($id, $token)
         "role" => 'reader',
         "type" => 'anyone'
     );
-    $url = "https://www.googleapis.com/drive/v3/files/$id/permissions";
+    $url = "https://www.googleapis.com/drive/v2/files/$id/permissions";
     $authorization = "Authorization: Bearer $token";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -209,11 +208,11 @@ function anyone2($id, $token)
 }
 function copyfile2($id, $token, $folder)
 {
-    $url = "https://www.googleapis.com/drive/v3/files/$id/copy?supportsAllDrives=true&supportsTeamDrives=true";
+    $url = "https://www.googleapis.com/drive/v2/files/$id/copy?supportsAllDrives=true&supportsTeamDrives=true&key='$token'";
     $authorization = "Authorization: Bearer $token";
     $data = array(
         "parents" => [["id" => $folder]],
-        'description' => 'Download from KiTGDrive (www.gd1.kitlinks.xyz)'
+        'description' => 'download from Google Sharer'
     );
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -463,7 +462,7 @@ function create_folder($token)
 function move($file, $folder, $root, $token)
 {
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://www.googleapis.com/drive/v3/files/' . $file . '?addParents=' . $folder . '&removeParents=' . $root . '&fields=id%2c+parents');
+    curl_setopt($ch, CURLOPT_URL, 'https://www.googleapis.com/drive/v3/files/' . $file . '?addParents=' . $folder . '&removeParents=' . $root . '&supportsAllDrives=true&supportsTeamDrives=truefields=id%2c+parents');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Authorization: Bearer ' . $token
     ));
@@ -501,7 +500,7 @@ function anyonefolder($folder, $token)
 function copyfilev3($id, $token)
 {
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://www.googleapis.com/drive/v3/files/' . $id . '/copy?access_token=' . $token);
+    curl_setopt($ch, CURLOPT_URL, 'https://www.googleapis.com/drive/v3/files/' . $id . '/copy?supportsAllDrives=true&supportsTeamDrives=true&access_token=' . $token);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-length: 0',
         'Content-type: application/json',

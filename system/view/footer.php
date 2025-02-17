@@ -1,9 +1,9 @@
 <?php echo analytics() ?> 
 <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer bg-gradient-dark">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <?php echo config('site.copyright')?> <?php echo date('Y'); ?></span>
+            <span class="text-white">Copyright &copy; <?php echo config('site.copyright')?> <?php echo date('Y'); ?></span>
           </div>
           <?php if(isset($_SESSION['email'])):?>
           <br>
@@ -30,13 +30,13 @@
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-gradient-dark">
           <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true" class="text-white">×</span>
           </button>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer bg-gradient-dark">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="/login.php?action=logout">Logout</a>
         </div>

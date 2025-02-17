@@ -527,6 +527,9 @@ kbd {
   background-color: #3a3b45;
   border-radius: 0.2rem;
 }
+mb4 {
+    color: #e83e8c;
+}
 
 kbd kbd {
   padding: 0;
@@ -9667,7 +9670,7 @@ a:focus {
 }
 
 .bg-gradient-primary {
-  background-color: #4e73df;
+  background-color: #5a5c69;
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
   background-size: cover;
 }
